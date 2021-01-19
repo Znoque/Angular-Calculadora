@@ -58,7 +58,7 @@ export class CalculadoraComponent implements OnInit {
     if(this.op === ''){
       this.n1 = this.concatenarNumero(this.n1, num);
     } else{
-      this.n2 = this.concatenarNumero(this.n2, num);
+      this.n2 = this.concatenarNumero(this.n2, num);  
     }
   }
 
@@ -142,10 +142,13 @@ export class CalculadoraComponent implements OnInit {
    * @return string
    */
   get display(): string{
-    if(this.r !== null){
+    if(this.r !== 0){
       return this.r.toString();
     }
-    if(this.n2 !== null){
+    /*if(this.op !== ''){
+      return this.op;
+    }*/
+    if(this.n2 !== ''){
       return this.n2;
     }
     return this.n1;
